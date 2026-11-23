@@ -1,0 +1,7 @@
+Mon Nov 23 19:06:27 UTC 2026
+Renderer rebuild matches entry byte for byte.
+output/entry.png: PNG verified and decoded, 1024x1024, 598329 bytes, SHA-256 2043366dc11d4a48fe7ac66c0563875e4e21dc7dd3698fa4dd05c660e604cf42
+output/preview-600.png: PNG verified and decoded, 600x600, 352914 bytes, SHA-256 3e5cc2f1472ea36b2e4957a40f3eb1ce34b12a99ac24e1e3aaae213e66404687
+output/preview-300.png: PNG verified and decoded, 300x300, 117247 bytes, SHA-256 ed89e855d4d237e92122790cf691abc5d00987e6396144c8620c8f85ddca90f1
+Official kit: all 11 manifest files verified.
+853d0dac81b059ea94dae6603e94ed515a5ced168b18bd3917459e627f14702a  archive/run-2/entry.png

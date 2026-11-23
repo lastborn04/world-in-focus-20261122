@@ -1,0 +1,15 @@
+Mon Nov 23 19:05:52 UTC 2026
+v22.23.4
+Literal /output path, isolated network, 1 CPU, peak RSS 60652 KiB.
+
+real	0m0.287s
+user	0m0.103s
+sys	0m0.037s
+Literal /output path, isolated network, 1 CPU, peak RSS 60656 KiB.
+
+real	0m0.186s
+user	0m0.100s
+sys	0m0.041s
+2043366dc11d4a48fe7ac66c0563875e4e21dc7dd3698fa4dd05c660e604cf42  /tmp/world-focus-run3.IUlKcM8f/a/entry.png
+2043366dc11d4a48fe7ac66c0563875e4e21dc7dd3698fa4dd05c660e604cf42  /tmp/world-focus-run3.IUlKcM8f/b/entry.png
+2043366dc11d4a48fe7ac66c0563875e4e21dc7dd3698fa4dd05c660e604cf42  output/entry.png

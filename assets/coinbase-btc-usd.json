@@ -1,0 +1,6 @@
+{
+  "product": "BTC-USD",
+  "candle_fields": ["start_utc_epoch", "low", "high", "open", "close", "volume"],
+  "daily": [1795305600, 58636.18, 61568.11, 60086, 61163.01, 8857.86778295],
+  "minute_starting_1800_utc": [1795370400, 60720.74, 60752.18, 60740.3, 60744.83, 3.05029112]
+}

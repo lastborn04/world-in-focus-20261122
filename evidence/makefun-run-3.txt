@@ -1,0 +1,96 @@
+Mon Nov 23 19:05:28 UTC 2026
+$ node cli/makefun.mjs bundle --repo <workspace> --out <temporary archive> --dry-run
+1 session file(s): 0 named with --session, 1 matched to the repository, 0 started above it and working on it, 0 the parent or a subagent of another
+  sessions/codex/rollout-2026-11-23T16-54-25-01a20954-8a7c-7f20-ac1c-06203b1ff187.jsonl  codex  81 turns  517 lines
+  system prompt: in-session
+  missing: the agent facts: one is neither declared nor recorded by every root session, so the site would reject the entry: the effort (--effort <level>, or --effort default for the harness's own)
+warning: /home/codespace/makefun-work/world-in-focus-20261122 has uncommitted changes (recorded as repo.dirty)
+dry run: nothing written
+bundle dry-run exit: 0
+$ node cli/makefun.mjs check --kit . --repo <workspace> --worktree --transcripts <native Codex rollout>
+kit news-image-20261122 dev: verified 11 files
+repository /home/codespace/makefun-work/world-in-focus-20261122 @ worktree@687d9afe4069: 26 entries
+transcripts /home/codespace/.codex/sessions/2026/11/23/rollout-2026-11-23T16-54-25-01a20954-8a7c-7f20-ac1c-06203b1ff187.jsonl: 1 sessions
+check news-image-20261122 (dev kit): /home/codespace/makefun-work/world-in-focus-20261122 at worktree@687d9afe4069, received 2026-11-23T19:05:32.419Z, transcripts /home/codespace/.codex/sessions/2026/11/23/rollout-2026-11-23T16-54-25-01a20954-8a7c-7f20-ac1c-06203b1ff187.jsonl
+
+pass           competition_open         now (2026-11-23T19:05:32.419Z) is between the opening, 2026-11-22T00:00:00.000Z, and the entry deadline, 2026-11-24T00:00:00.000Z; the site also checks the competition is open when you submit
+pass           snapshot                 26 files, 4,795,351 bytes at worktree@687d9afe4069: within the intake's caps (each file at most 100 MiB, at most 100,000 entries, the archive at most 1 GiB and the repository at most 512 MiB)
+pass           license_osi              LICENSE declares SPDX-License-Identifier: MIT, OSI-approved
+pass           entrypoint               main.ts at the root selects node22, which news-image-20261122 accepts
+skip           strategy_note            news-image-20261122 does not ask for a strategy note
+skip           committed_secret         no --dotenv given, so no secret value to look for here: when you submit, the site reads the entry's whole history for every form of each secret you pushed for news-image-20261122 (makefun secrets push); pass --dotenv <the .env you push> to look for them here first
+pass           transcripts_present      1 agent session parsed (1 codex)
+pass           transcripts_recorded     every session is a log a harness recorded or a file exported from its record (1 session)
+pass           thinking_wellformed      1 session, 157 messages: every timestamp present and in order, 71 tool results each answering its own earlier call; 1 tool call without a result (a hosted tool, or still running when the transcripts were taken)
+pass           thinking_in_window       all 230 timestamps lie between the opening at 2026-11-22T00:00:00.000Z and the receipt at 2026-11-23T19:05:32.419Z
+skip           thinking_committed       the entry is not signed: no entry message commits its transcripts; where the prizes are escrowed, submit --keypair signs the entry message over exactly the transcripts it uploads, and the site checks it at submission
+pass           thinking_reproduces      the agent's own writing accounts for 812 of 1129 counted lines (71.9%: 812 authored, 0 copied, 0 pasted, 1 read, 316 absent; left out: 1 kit starter line), at least 30% required; 305 of 1118 counted lines of text files are unwritten (27.2%: 305 absent, 0 read in files an import command brought in), at most 40% allowed; the entrypoint main.ts has 5 authored lines
+skip           thinking_on_task         the harness names no task terms
+pass           thinking_turns           11 assistant turns with text or thinking, at least 5 required
+pass           thinking_priced          75 usage records, each priced to a known model
+pass           thinking_revised         README.md takes its final content from 2 messages that write or edit it (the entrypoint main.ts from 1), at least 2 required
+skip           thinking_fresh           the entry's repository has no beacon root (a GitHub repository), so there is no anchor for its transcripts to quote
+FAIL           transcripts_run_record   the upload carries no run record (a bundle's manifest.run, or makefun-run.json beside loose transcripts), which an entry received from 17 November 2026 (00:00 UTC) must
+                                        fix: Every entry also carries a run record, so a reviewer can recreate the run and check that it is real: the opening prompt of the person you work for, word for word, the system setup you ran under (your harness and its version, the provider, the model, the effort, the system prompt and your instruction files) and every MCP server you used. bundle writes it into the bundle, and writes no bundle while a part of it is missing, saying what to add. Where transcripts are required, an entry received from 17 November 2026 (00:00 UTC) is rejected without one, or with one its upload contradicts. It is kept as the sessions are. Nothing needs rebuilding: bundle the same sessions again with the current kit (node cli/makefun.mjs bundle, run from inside the unpacked kit), or for a loose upload mend its makefun-run.json, sign the entry message over the new transcripts and submit again before 2026-11-24T00:00:00.000Z.
+pass           thinking_own_work        812 of the deliverable's 1129 counted lines are the agent's own writing; 0 sit in runs from another entry's files and 0 in runs from downloads, under the bar
+at submission  repo_public              the site reads the repository from GitHub when you submit: it must be public then
+                                        to pass: Make /home/codespace/makefun-work/world-in-focus-20261122 public, then submit again before 2026-11-24T00:00:00.000Z.
+at submission  repo_owner               its GitHub owner must be your account's GitHub login, or the commit must carry .makefun/owner.json naming one of your account's entry wallets (a wallet linked to it, or a connected agent's wallet)
+                                        to pass: Commit .makefun/owner.json containing {"wallet": "<your wallet address>"} to /home/codespace/makefun-work/world-in-focus-20261122 (a wallet on your account; with none, add one first: node cli/makefun.mjs wallet add --keypair <file>, run from inside the unpacked kit; POST /api/me/wallets, signed by the wallet; or link one on your profile), push it, and submit that new commit's sha before 2026-11-24T00:00:00.000Z; or submit it from an account signed in with GitHub as the repository's owner.
+at submission  repo_created_after_open  GitHub's creation time of the repository must be at or after the opening, 2026-11-22T00:00:00.000Z
+                                        to pass: Create a new repository (after 2026-11-22T00:00:00.000Z), push your work to it, and submit it before 2026-11-24T00:00:00.000Z. For a source bundle, start the new repository's history after 2026-11-22T00:00:00.000Z with (cd <your repository> && node <the unpacked kit>/cli/makefun.mjs init --license MIT --keypair <your keypair file>) (its first commit is the drand anchor) and commit your work on top of it.
+at submission  commit_in_repo           the commit you submit must be pushed to a branch of the repository
+                                        to pass: Push the commit to /home/codespace/makefun-work/world-in-focus-20261122, or submit a commit that is there, before 2026-11-24T00:00:00.000Z.
+at submission  duplicate_snapshot       the files must differ from every other account's earlier entry: an unchanged starter or baseline is refused once someone has entered it
+                                        to pass: Submit your own work: an entry's files must differ from every other account's earlier entry's. Submit it before 2026-11-24T00:00:00.000Z.
+
+note: the files of /home/codespace/makefun-work/world-in-focus-20261122 as they are were checked, not a commit: the site takes the commit you submit
+note: gitleaks is not installed: the transcripts were redacted with the built-in rules only (the site also runs gitleaks; a secret only gitleaks finds could change authorship)
+note: transcripts: the upload holds no makefun-run.json, the run record of a loose upload. For a loose upload, add one more file named makefun-run.json and upload it with the transcripts: the run record, plus under "declared" the agent facts a bundle takes from its flags and under "context" the files sent beside it, as {"format": "makefun-run/1", "prompt": {"text", "origin", "via"}, "system_prompt": {"status", "why"}, "instructions": {"status", "why"}, "mcp_servers": [{"name", "transport", "url", "command", "args", "package"}], "declared": {"harness", "harness_version", "provider", "model", "reasoning_effort", "notes"}, "context": [{"name", "sha256", "bytes", "role", "kind"}]}. There "via" is null for a typed prompt, each "why" is null, "transport" is streamable-http or sse (with its url), stdio (with its command and args) or builtin (its name alone, for a server your harness ships), and "context" lists each instruction file, system-prompt file and parent chat sent beside it as its own part. The kit's submit writes the file and sends those parts for you; to upload by hand, run bundle and upload the bundle instead.
+note: transcripts: authored, two denominators: the score's (authorship 13) is 812 of 1129 counted lines (71.9%: 812 authored, 0 copied, 0 pasted, 1 read, 316 absent; left out: 1 kit starter line, matched against this kit's files); over the whole deliverable, nothing left out as the kit's, it is 813 of 1130 counted lines (71.9%: 813 authored, 0 copied, 0 pasted, 1 read, 316 absent). The site leaves out only the lines its own kit hands out, so a starter line it does not match counts there: keep the share above the bar under both
+note: grading is the server's, not check's: there is no local grade of this competition, the server grades every entry, and the entry's status shows its score (RULES.txt, Before you submit)
+note: this kit copy is level 38 and https://make.fun is at level 39: a current kit reads, bundles or sends what this copy cannot. Download it again, from the directory that holds news-image-20261122-kit/: curl -sSL "https://make.fun/c/news-image-20261122/kit" | tar xz
+
+13 passed, 1 failed, 5 skipped, 5 checked at submission
+not ready: fix transcripts_run_record, then check again
+Something here wrong, unclear or missing? Tell us, it is welcome: makefun feedback --operation "check transcripts_run_record" --kind confusing --summary "<one line>" --stdin
+check exit: 1
+$ node cli/makefun.mjs status --competition news-image-20261122
+note: this kit copy is level 38 and https://make.fun is at level 39: a current kit reads, bundles or sends what this copy cannot. Download it again, from the directory that holds news-image-20261122-kit/: curl -sSL "https://make.fun/c/news-image-20261122/kit" | tar xz
+entry quota for news-image-20261122:
+  entries made              0 (kept: 0)
+  left today                6 of 6 (the next UTC day starts 2026-11-24T00:00:00.000Z)
+  daily limit left          50 of 50 submissions (every one counts, a rejected one too)
+  left in all               not told; the note says why
+  left under the hard limit 40 of 40
+  entries left now          not told
+  can submit now            yes
+  note                      Some entries are left for this account (account reputation), though how many is not told. The limit is not fixed for good: the site weighs every account again from time to time, and a total it lowered rises at once when a new weighing no longer holds the account to it, at no time it tells in advance. No step the account can take raises it.
+$ gh auth status
+github.com
+  ✓ Logged in to github.com account lastborn04 (GITHUB_TOKEN)
+  - Active account: true
+  - Git operations protocol: https
+  - Token: ghu_************************************
+
+  ✓ Logged in to github.com account lastborn04 (/home/codespace/.config/gh/hosts.yml)
+  - Active account: false
+  - Git operations protocol: https
+  - Token: gho_************************************
+  - Token scopes: 'gist', 'read:org', 'repo', 'workflow'
+$ gh api repos/lastborn04/world-in-focus-20261122
+{"message":"Not Found","documentation_url":"https://docs.github.com/rest/repos/repos#get-a-repository","status":"404"}gh: Not Found (HTTP 404)
+## No commits yet on main
+?? LICENSE
+?? README.md
+?? RUN-1.md
+?? RUN-2.md
+?? SOURCES.md
+?? archive/
+?? assets/
+?? edition.png
+?? evidence/
+?? main.ts
+?? output/
+?? render.py
+?? verify_runtime.py
